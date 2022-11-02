@@ -18,7 +18,7 @@ public class Student {
     name = n; // equivalent to this.name = n;
     this.gpa = gpa;
   }
-  
+
   public static Student of(String name, double gpa) {
       if (gpa > 3.5) {
         return new VIPStudent(name, gpa);

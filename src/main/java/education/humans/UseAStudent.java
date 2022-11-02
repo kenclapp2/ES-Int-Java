@@ -51,3 +51,20 @@ public class UseAStudent {
 //    System.out.println(s2.gpa);
 //  }
 }
+
+class Scratch {
+  public static void showADate(int day, int month, int year) {
+    System.out.println("Day is " + day + " month is " + month
+      + " year is " + year);
+  }
+
+  public static void main(String[] args) {
+    // positional parameter passing. Must be in the right order!!
+    showADate(12, 11, 2022);
+//    showADate(12, 26, 2022);
+    // some languages but NOT JAVA allow "named" parameter passing
+    // NOT the same as "pass by name"
+//    showADate(month=12, day=26, year=2022);
+//    showADate(month: 12, day: 26, year: 2022);
+  }
+}
