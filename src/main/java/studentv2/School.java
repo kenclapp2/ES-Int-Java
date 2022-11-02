@@ -3,6 +3,15 @@ package studentv2;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+an interface describing a (single) method that "qualifies" a Student (pass/fail)
+one or more implementations of that for different criteria
+"getStudentsByCriterion" method--args are many students, and a single
+  criterion object. It returns the list of students that pass the test
+"show all student" which simply prints every student in a list
+ */
+
+
 interface CriterionOfStudent {
   boolean test(Student s);
 }
