@@ -11,6 +11,7 @@ public class UseAStudent {
   }
 
   public static void main(String[] args) {
+    System.out.println("ORIGINAL USE A STUDENT!!!");
 //    Student s1 = new Student("Fred", 3.2);
 //    Student s2 = new Student("Jim", 2.2);
     Student s1 = Student.of("Fred", 3.2);
@@ -32,6 +33,9 @@ public class UseAStudent {
     richAgain.setGpa(2.0);
     /*UseAStudent.*/showAStudent(rich);
 //    /*UseAStudent.*/showAStudent(richAgain);
+
+    studentv2.School.main(new String[0]);
+    System.out.println("ORIGINAL USE A STUDENT ENDS HERE!!!!!");
   }
 
   // private fields won't let us do this

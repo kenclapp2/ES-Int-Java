@@ -1,14 +1,14 @@
 package studentv2;
-
-import java.util.Arrays;
-import java.util.List;
+//
+//import java.util.Arrays;
+//import java.util.List;
 
 public class Student {
   private String name;
   private double gpa;
-  private List<String> courses;
+  private java.util.List<String> courses;
 
-  private Student(String name, double gpa, List<String> courses) {
+  private Student(String name, double gpa, java.util.List<String> courses) {
     // validate??
     this.name = name;
     this.gpa = gpa;
@@ -17,7 +17,7 @@ public class Student {
 
   public static Student of(String name, double gpa, String ... courses) {
 //    return new Student(name, gpa, Arrays.asList(courses));
-    return new Student(name, gpa, List.of(courses));
+    return new Student(name, gpa, java.util.List.of(courses));
   }
 
 
@@ -29,7 +29,7 @@ public class Student {
     return gpa;
   }
 
-  public List<String> getCourses() {
+  public java.util.List<String> getCourses() {
     // oops, will this break immutability?
     // NO, provided the list represented by "courses" is
     // not changeable. Using List.of in our factory
