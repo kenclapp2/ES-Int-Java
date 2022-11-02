@@ -11,7 +11,6 @@ one or more implementations of that for different criteria
 "show all student" which simply prints every student in a list
  */
 
-
 interface CriterionOfStudent {
   boolean test(Student s);
 }
