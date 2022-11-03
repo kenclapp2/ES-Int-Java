@@ -59,6 +59,19 @@ public class School {
     List removeIf -- use it to remove "long Strings" from
       your list of strings above
      */
+
+    List<String> names =
+        new ArrayList<>(List.of("Fred", "Jim", "Sheila", "Albert", "Susan"));
+    System.out.println(names);
+    names.removeIf(
+        (String s) -> {
+          System.out.println("testing " + s + " to see if I like it...");
+          boolean like = s.length() > 4;
+          System.out.println("... " + (like ? "I do!" : "I don't :("));
+          return like;
+        }
+    );
+    System.out.println(names);
   }
 }
 
