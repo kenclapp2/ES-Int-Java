@@ -50,6 +50,14 @@ public class School {
     ascending grade
     descending length of name
     ascending number of courses
+
+    if done :) look at these methods
+    Iterable forEach -- use it to print an entire list
+      (Consumer, one argument, returns void... a lot like println :)
+    List replaceAll -- use it to change a list of String
+      to upper case (note it does mutate the original data)
+    List removeIf -- use it to remove "long Strings" from
+      your list of strings above
      */
   }
 }
