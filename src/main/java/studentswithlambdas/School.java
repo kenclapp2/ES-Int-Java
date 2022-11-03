@@ -41,7 +41,7 @@ public class School {
     System.out.println("before sorting");
     showAllStudents(roster);
 //    roster.sort((s1, s2) -> { return s2.getName().compareTo(s1.getName()); } );
-    roster.sort((s1, s2) -> s2.getName().compareTo(s1.getName()) );
+    roster.sort((s1, s2) -> s2.getName().compareTo(s1.getName()));
     System.out.println("after sorting");
     showAllStudents(roster);
 
