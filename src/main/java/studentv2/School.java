@@ -15,10 +15,10 @@ interface CriterionOfStudent {
   boolean test(Student s);
 }
 
-class SmartStudent implements CriterionOfStudent {
+class StudentWithGoodGrade implements CriterionOfStudent {
   private double threshold;
 
-  public SmartStudent(double threshold) {
+  public StudentWithGoodGrade(double threshold) {
     this.threshold = threshold;
   }
 
@@ -110,17 +110,76 @@ public class School {
     System.out.println("smart: -----------------");
     showAllStudents(
         getStudentsByCriterion(
-            roster, new SmartStudent(3.0)));
+            roster, new StudentWithGoodGrade(3.0)));
 
     System.out.println("enthusiastic: -----------------");
     showAllStudents(
         getStudentsByCriterion(
             roster, new EnthusiasticStudent()));
 
-    System.out.println("enthusiastic: -----------------");
+    System.out.println("first half alpha: -----------------");
     showAllStudents(
         getStudentsByCriterion(
             roster, new FirstHalfAlpha()));
+
+//    System.out.println("unenthusiastic: -----------------");
+//    showAllStudents(
+//        getStudentsByCriterion(
+//            roster, new
+//    /*class UnEnthusiasticStudent implements*/ CriterionOfStudent() {
+//      @Override
+//      public boolean test(Student s) {
+//        return s.getCourses().size() < 2;
+//      }
+//    }
+//            ));
+
+//    System.out.println("unenthusiastic: -----------------");
+//    showAllStudents(
+//        getStudentsByCriterion(
+//            roster, new CriterionOfStudent() {
+//      @Override
+//      public boolean test(Student s) {
+//        return s.getCourses().size() < 2;
+//      }
+//    }));
+
+//    System.out.println("unenthusiastic: -----------------");
+//    showAllStudents(
+//        getStudentsByCriterion(
+//// Second argument MUST be an OBJECT that implements CriterionOfStudent
+//// so, "new" and "CriterionOfStudent" are really rather redundant
+//// Further, the interface requires EXACTLY ONE abstract method be implemented
+//// AND that's the ONLY code we wish to provide, then, we CAN use
+//// this syntax...
+//// IF we are only providing a body for one *known* method, we
+//// should NOT have to specify the name of that method, and if it's
+//// the ONLY one, we don't need surrounding "grouping" (i.e. curlies)
+//            roster, /*new CriterionOfStudent() {*/
+//      /*@Override
+//      public boolean test*/(Student s) -> {
+//        return s.getCourses().size() < 2;
+//      }
+//    /*}*/));
+
+    System.out.println("unenthusiastic: -----------------");
+
+    CriterionOfStudent takesLessThanTwoCourses =
+        s -> s.getCourses().size() < 2;
+
+//    showAllStudents(
+//        getStudentsByCriterion(
+//            roster,
+////            (Student s) -> { return s.getCourses().size() < 2; }
+////            (@NotNull Student s) -> { return s.getCourses().size() < 2; }
+////            (@Deprecated var s) -> { return s.getCourses().size() < 2; }
+////            (s) -> { return s.getCourses().size() < 2; }
+////            s -> { return s.getCourses().size() < 2; }
+////            s -> s.getCourses().size() < 2
+//            takesLessThanTwoCourses
+//            ));
+    showAllStudents(
+        getStudentsByCriterion( roster, s -> s.getCourses().size() < 2 ));
 
 //    showAllStudents(roster);
 //    System.out.println("smart: -----------------");

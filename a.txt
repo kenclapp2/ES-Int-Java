@@ -1,0 +1,3 @@
+This is a text file
+its name is a.txt
+it has, count 'em, three lines!
