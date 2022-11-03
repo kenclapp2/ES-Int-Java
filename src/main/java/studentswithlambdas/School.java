@@ -37,5 +37,19 @@ public class School {
     showAllStudents(
         getStudentsByCriterion( roster, s -> s.getCourses().size() < 2 ));
 
+    // Sorting a list MUTATES the original list
+    System.out.println("before sorting");
+    showAllStudents(roster);
+//    roster.sort((s1, s2) -> { return s2.getName().compareTo(s1.getName()); } );
+    roster.sort((s1, s2) -> s2.getName().compareTo(s1.getName()) );
+    System.out.println("after sorting");
+    showAllStudents(roster);
+
+    /*
+    order by:
+    ascending grade
+    descending length of name
+    ascending number of courses
+     */
   }
 }
