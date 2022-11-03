@@ -44,6 +44,21 @@ public class School {
     roster.sort((s1, s2) -> s2.getName().compareTo(s1.getName()));
     System.out.println("after sorting");
     showAllStudents(roster);
+    roster.sort(
+        (s1, s2) -> {
+          System.out.println("comparing " + s1 + " with " + s2);
+          return Double.compare(s1.getGpa(), s2.getGpa());
+        }
+    );
+    System.out.println("after sorting by gpa");
+    showAllStudents(roster);
+
+    System.out.println("descending length -------------");
+//    roster.sort((s1, s2) -> s2.getName().length() - s1.getName().length());
+    roster.sort((s1, s2) -> Integer.compare(
+        s2.getName().length(), s1.getName().length()));
+    System.out.println(roster);
+    System.out.println("-------------");
 
     /*
     order by:
@@ -59,8 +74,20 @@ public class School {
     List removeIf -- use it to remove "long Strings" from
       your list of strings above
      */
-
     List<String> names =
+        new ArrayList<>(List.of("Fred", "Jim", "Sheila", "Albert", "Susan"));
+    System.out.println(names);
+
+    names.forEach(x -> System.out.println(x));
+    System.out.println("----------------------");
+    names =
+        new ArrayList<>(List.of("Fred", "Jim", "Sheila", "Albert", "Susan"));
+    System.out.println(names);
+    names.replaceAll(x -> x.toUpperCase());
+    names.forEach(x -> System.out.println(x));
+    System.out.println("----------------------");
+
+    names =
         new ArrayList<>(List.of("Fred", "Jim", "Sheila", "Albert", "Susan"));
     System.out.println(names);
     names.removeIf(
